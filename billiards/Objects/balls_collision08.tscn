@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cma67htskjbb2"]
+
+[ext_resource type="PackedScene" uid="uid://c7wmhc5vv50ar" path="res://Models/eight_ball.blend" id="1_0y321"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7git3"]
+radius = 0.029
+
+[node name="ball08" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+mass = 0.17
+
+[node name="eight_ball" parent="RigidBody3D" instance=ExtResource("1_0y321")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_7git3")

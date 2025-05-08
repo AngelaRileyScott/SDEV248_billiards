@@ -1,0 +1,94 @@
+[gd_scene load_steps=22 format=3 uid="uid://dc40ssdr45jml"]
+
+[ext_resource type="PackedScene" uid="uid://dtsi08cfwigpa" path="res://Scenes/node_3d.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://djsdao0rrsgf6" path="res://Objects/balls_collision01.tscn" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://bfqav5asobkio" path="res://Objects/balls_collision_cue.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://ppmbu2ogta44" path="res://Objects/balls_collision11.tscn" id="3_21xkr"]
+[ext_resource type="PackedScene" uid="uid://cojqobcgc45y6" path="res://Objects/balls_collision02.tscn" id="3_b3802"]
+[ext_resource type="PackedScene" uid="uid://dggle0xng8b1s" path="res://Objects/balls_collision03.tscn" id="3_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://cdab72ddbbhe" path="res://Objects/balls_collision05.tscn" id="3_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://uia66s3kn6ay" path="res://Objects/balls_collision14.tscn" id="4_6bp64"]
+[ext_resource type="PackedScene" uid="uid://h7uliia1qfww" path="res://Objects/balls_collision06.tscn" id="4_hptm8"]
+[ext_resource type="PackedScene" uid="uid://cp0qh8swlxbkm" path="res://Objects/cue.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://b31t1uroi8a1c" path="res://Objects/balls_collision04.tscn" id="4_jkdf5"]
+[ext_resource type="PackedScene" uid="uid://cma67htskjbb2" path="res://Objects/balls_collision08.tscn" id="5_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://bsihpv15upf73" path="res://Objects/balls_collision07.tscn" id="8_fevyy"]
+[ext_resource type="PackedScene" uid="uid://ck4aqwu7e6vjt" path="res://Objects/balls_collision09.tscn" id="8_wsu2k"]
+[ext_resource type="PackedScene" uid="uid://ekth7oruua8k" path="res://Objects/balls_collision10.tscn" id="9_k12tt"]
+[ext_resource type="PackedScene" uid="uid://doee6ry5w8shc" path="res://Objects/balls_collision12.tscn" id="13_hibaj"]
+[ext_resource type="PackedScene" uid="uid://b6oji4cxvk1dc" path="res://Objects/balls_collision13.tscn" id="14_pdsj5"]
+[ext_resource type="PackedScene" uid="uid://uilnwv7cwv3q" path="res://Objects/balls_collision15.tscn" id="16_ee4r6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8gbba"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_jjvhh"]
+sky_material = SubResource("ProceduralSkyMaterial_8gbba")
+
+[sub_resource type="Environment" id="Environment_kry3j"]
+background_mode = 2
+sky = SubResource("Sky_jjvhh")
+tonemap_mode = 2
+
+[node name="main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kry3j")
+
+[node name="cue" parent="." instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 0.995726, -0.0923534, 0, 0.0923534, 0.995726, 0, 0.149568, -1.10225)
+
+[node name="ball01" parent="." instance=ExtResource("2_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.6)
+
+[node name="ball02" parent="." instance=ExtResource("3_b3802")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.1, 0.8)
+
+[node name="ball03" parent="." instance=ExtResource("3_fdnlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.1, 0.75)
+
+[node name="ball04" parent="." instance=ExtResource("4_jkdf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 0.1, 0.75)
+
+[node name="ball05" parent="." instance=ExtResource("3_ynf5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.1, 0.7)
+
+[node name="ball06" parent="." instance=ExtResource("4_hptm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.1, 0.7)
+
+[node name="ball07" parent="." instance=ExtResource("8_fevyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.1, 0.8)
+
+[node name="ball08" parent="." instance=ExtResource("5_d1ilt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.7)
+
+[node name="ball09" parent="." instance=ExtResource("8_wsu2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, 0.1, 0.75)
+
+[node name="ball10" parent="." instance=ExtResource("9_k12tt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0.1, 0.75)
+
+[node name="ball11" parent="." instance=ExtResource("3_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.1, 0.65)
+
+[node name="ball12" parent="." instance=ExtResource("13_hibaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, 0.1, 0.8)
+
+[node name="ball13" parent="." instance=ExtResource("14_pdsj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.8)
+
+[node name="ball14" parent="." instance=ExtResource("4_6bp64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 0.1, 0.65)
+
+[node name="ball15" parent="." instance=ExtResource("16_ee4r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16, 0.1, 0.8)
+
+[node name="ball_cue" parent="." instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -0.322936)
+
+[node name="Table" parent="." instance=ExtResource("2_8gbba")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.25, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 1.13657, 1.92504, -3.16832)
+shadow_enabled = true

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfqav5asobkio"]
+
+[ext_resource type="PackedScene" uid="uid://4lwmfk77wpny" path="res://Models/que_ball.blend" id="1_ccn8u"]
+[ext_resource type="Script" uid="uid://fbeffdqiqqpo" path="res://Scripts/balls_collision_cue.gd" id="1_dhn6a"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7git3"]
+radius = 0.029
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_dhn6a")
+
+[node name="cueball" type="RigidBody3D" parent="."]
+mass = 0.17
+can_sleep = false
+
+[node name="que_ball" parent="cueball" instance=ExtResource("1_ccn8u")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cueball"]
+shape = SubResource("SphereShape3D_7git3")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://djsdao0rrsgf6"]
+
+[ext_resource type="PackedScene" uid="uid://dw1683qfkiu54" path="res://Models/one_ball.blend" id="1_gn2lo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7git3"]
+radius = 0.029
+
+[node name="ball01" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+mass = 0.17
+
+[node name="one_ball" parent="RigidBody3D" instance=ExtResource("1_gn2lo")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_7git3")

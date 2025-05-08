@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://uia66s3kn6ay"]
+
+[ext_resource type="PackedScene" uid="uid://jtemi01j5vo1" path="res://Models/fourteen_ball.blend" id="1_adejk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7git3"]
+radius = 0.029
+
+[node name="ball14" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+mass = 0.17
+
+[node name="fourteen_ball" parent="RigidBody3D" instance=ExtResource("1_adejk")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_7git3")
